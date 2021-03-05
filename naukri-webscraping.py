@@ -4,6 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By 
 import csv
+import pandas as pd
 from time import sleep
 
 search = input('Search Job: ')
@@ -124,3 +125,23 @@ while True:
     
     print('New Page URL: ', page_url)
     print()
+
+
+# Converting CSV file to a dataframe
+df = pd.read_csv("django.csv")     # Scrapped CSV file name
+print(df)
+
+# Total number of rows (may include duplicate rows)
+print(len(list(df))) 
+
+
+# Removing duplicate rows  
+df.drop_duplicates(subset=None, inplace=True)
+# print(df)
+# print(len(list(df)))
+
+# Creating new CSV file
+output_filename = input('Enter output filename: ') 
+
+# Writing the results to a new CSV file
+df.to_csv(output_filename+'.csv', index=False)

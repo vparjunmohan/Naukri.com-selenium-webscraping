@@ -128,7 +128,7 @@ while True:
 
 
 # Converting CSV file to a dataframe
-df = pd.read_csv("django.csv")     # Scrapped CSV file name
+df = pd.read_csv("yourFileName.csv")     # Scrapped CSV file name
 print(df)
 
 # Total number of rows (may include duplicate rows)

@@ -131,14 +131,9 @@ while True:
 df = pd.read_csv("yourFileName.csv")     # Scrapped CSV file name
 print(df)
 
-# Total number of rows (may include duplicate rows)
-print(len(list(df))) 
-
-
 # Removing duplicate rows  
 df.drop_duplicates(subset=None, inplace=True)
-# print(df)
-# print(len(list(df)))
+print(df)
 
 # Creating new CSV file
 output_filename = input('Enter output filename: ') 
